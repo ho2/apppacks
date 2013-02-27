@@ -3,6 +3,7 @@
   <p>
   	
     <%= link_to "<i class='icon-pencil icon-white'></i> #{t('New Package')}".html_safe , new_package_path, :class=>'btn btn-large btn-primary'%>
+    <%= link_to "<i class='icon-align-justify icon-white'></i> #{t('New Imei Package')}".html_safe , new_imei_package_path, :class=>'btn btn-large btn-danger'%>
     <%= link_to "<i class='icon-th-large icon-white'></i> #{t('Package List')}".html_safe, packages_path, :class=>'btn btn-large btn-success' %>
     <%= link_to "<i class='icon-barcode icon-white'></i> #{t('Imei List')}".html_safe, imei_packages_path, :class=>'btn btn-large btn-warning' %>
   </p>

@@ -42,11 +42,22 @@ class ImeiPackagesController < ApplicationController
   # POST /imei_packages.json
   def create
     @imei_package = ImeiPackage.new(params[:imei_package])
+    
+    if params[:imei_list]!=""
+      params[:imei_list].each_line do |line|
+        @imei_package_l = ImeiPackage.new(params[:imei_package])
+        @imei_package_l.imei=line
+        @imei_package_l.save!
+      end
+    end
 
     respond_to do |format|
-      if @imei_package.save
+      if params[:imei_list]==""
         format.html { redirect_to @imei_package, notice: 'Imei package was successfully created.' }
         format.json { render json: @imei_package, status: :created, location: @imei_package }
+      elsif params[:imei_list]!=""
+        format.html { redirect_to imei_packages_path, notice: 'Imei packages were successfully created.' }
+        format.json { render json: imei_packages_path, status: :created, location: @imei_package }
       else
         format.html { render action: "new" }
         format.json { render json: @imei_package.errors, status: :unprocessable_entity }

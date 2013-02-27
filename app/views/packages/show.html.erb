@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Action:</b>
+  <%= @package.action %>
+</p>
+
+<p>
+  <b>Packagename:</b>
+  <%= @package.packageName %>
+</p>
+
+<p>
+  <b>Versionnumber:</b>
+  <%= @package.versionNumber %>
+</p>
+
+<p>
+  <b>Downloadpath:</b>
+  <%= @package.downloadPath %>
+</p>
+
+<p>
+  <b>Packagenamepath:</b>
+  <%= @package.packageNamePath %>
+</p>
+
+<p>
+  <b>Packagenotation:</b>
+  <%= @package.packageNotation %>
+</p>
+
+<p>
+  <b>Forceupdate:</b>
+  <%= @package.forceUpdate %>
+</p>
+
+
+<%= link_to 'Edit', edit_package_path(@package) %> |
+<%= link_to 'Back', packages_path %>

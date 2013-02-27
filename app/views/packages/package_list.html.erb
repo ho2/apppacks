@@ -1,0 +1,30 @@
+<h2>Listing packages for <i style="color:gray"><%= @imei %></i></h2>
+
+<table class="table table-striped table-condensed">
+  <tr>
+    <th>ID</th>
+    <th>Action</th>
+    <th>pName</th>
+    <th>vNo</th>
+    <th>dPath</th>
+    <th>pNamePath</th>
+    <th>pNotation</th>
+    <th>fUpdate</th>
+  </tr>
+
+<% @packages.each do |package| %>
+  <tr>
+    <td><%= package.id %></td>
+    <td><%= package.action %></td>
+    <td><%= package.packageName %></td>
+    <td><%= package.versionNumber %></td>
+    <td><%= package.downloadPath %></td>
+    <td><%= package.packageNamePath %></td>
+    <td><%= package.packageNotation %></td>
+    <td><%= package.forceUpdate %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Package:</b>
+  <%= @imei_package.package_id %>
+</p>
+
+<p>
+  <b>Imei:</b>
+  <%= @imei_package.imei %>
+</p>
+
+
+<%= link_to 'Edit', edit_imei_package_path(@imei_package) %> |
+<%= link_to 'Back', imei_packages_path %>

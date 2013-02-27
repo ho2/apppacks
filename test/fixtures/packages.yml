@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  action: MyString
+  packageName: MyString
+  versionNumber: MyString
+  downloadPath: MyString
+  packageNamePath: MyString
+  packageNotation: MyString
+  forceUpdate: false
+
+two:
+  action: MyString
+  packageName: MyString
+  versionNumber: MyString
+  downloadPath: MyString
+  packageNamePath: MyString
+  packageNotation: MyString
+  forceUpdate: false

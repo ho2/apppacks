@@ -1,4 +1,5 @@
 class ImeiPackagesController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index,:show]
   # GET /imei_packages
   # GET /imei_packages.json
   def index

@@ -1,6 +1,7 @@
 class PackagesController < ApplicationController
   # GET /packages
   # GET /packages.json
+  before_filter :authenticate_user!, :except => [:index, :package_list,:show]
   def index
     @packages = Package.all
 

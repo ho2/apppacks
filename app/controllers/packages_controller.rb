@@ -13,9 +13,7 @@ class PackagesController < ApplicationController
   
   def package_list
     @imei=params[:imei]
-    sql="SELECT packages.* FROM packages LEFT JOIN imei_packages
-    ON imei_packages.package_id = packages.id WHERE imei_packages.imei=?"
-    @packages = Package.find_by_sql([sql,@imei])
+    @packages = Package.joins(:imei_packages).where('imei_packages.imei' => @imei)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -47,7 +47,7 @@ class ImeiPackagesController < ApplicationController
     if params[:imei_list]!=""
       params[:imei_list].each_line do |line|
         @imei_package_l = ImeiPackage.new(params[:imei_package])
-        @imei_package_l.imei=line
+        @imei_package_l.imei=line.strip
         @imei_package_l.save!
       end
     end

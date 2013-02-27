@@ -54,14 +54,16 @@ class ImeiPackagesController < ApplicationController
 
     respond_to do |format|
       if params[:imei_list]==""
-        format.html { redirect_to @imei_package, notice: 'Imei package was successfully created.' }
-        format.json { render json: @imei_package, status: :created, location: @imei_package }
+        if @imei_package.save
+          format.html { redirect_to @imei_package, notice: 'Imei package was successfully created.' }
+          format.json { render json: @imei_package, status: :created, location: @imei_package }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @imei_package.errors, status: :unprocessable_entity }
+        end
       elsif params[:imei_list]!=""
         format.html { redirect_to imei_packages_path, notice: 'Imei packages were successfully created.' }
         format.json { render json: imei_packages_path, status: :created, location: @imei_package }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @imei_package.errors, status: :unprocessable_entity }
       end
     end
   end
